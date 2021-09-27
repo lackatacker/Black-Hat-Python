@@ -4,7 +4,8 @@ target_host = '127.0.0.1'
 target_port = 9997
 #sendto and recvfrom are used for UDP based sockets
 client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-#this line isn't in the book, but it's mandatory for UDP socket to work as intended.
+#this line isn't in the book, but it's mandatory for UDP socket to work as intended, 
+#we're binding the client to the port+host
 client.bind((target_host, target_port))
 # WE DON'T NEED TO CONNECT IN UDP BECAUSE IT IS CONNECTIONLESS, UNLIKE TCP
 client.sendto(b"AAABBBCCC", (target_host, target_port))
